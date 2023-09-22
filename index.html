@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Meme Cat</title>
+  </head>
+  <body>
+    <header>
+      <div id="title">
+        <h1 id="welcome">MemeCat</h1>
+        <p id="slogan">"Creating Laughter, One Meme at a Time!"</p>
+      </div>
+    </header>
+    <div id="container">
+      <main>
+        <section id="meme-generator">
+          <div id="url-div">
+            <input
+              type="text"
+              id="imageUrlInput"
+              placeholder="Enter Image URL"
+            />
+            <button id="loadImageButton">Load Image</button>
+          </div>
+
+          <div id="meme-lab">
+            <div id="imageContainer">
+              <div class="image-wrapper">
+                <img
+                  src="/meme-this.png"
+                  class="loadedImage"
+                  alt=""
+                  id="loadedImage"
+                />
+              </div>
+              <div class="text top-text">Top Text Here</div>
+              <div class="text bottom-text">Bottom Text Here</div>
+            </div>
+            <div id="settings-div">
+              <fieldset id="custom-info-feildset">
+                <legend id="custom-info-legend">
+                  Customize your meme text font and background color
+                </legend>
+                <div id="meme-style">
+                  <div id="font-div">
+                    <select name="font" id="pick-font">
+                      <option value="Inter">Default</option>
+                      <option value="Impact">Impact</option>
+                      <option value="Inter">Inter</option>
+                      <option value="Arial">Arial</option>
+                      <option value="Georgia">Georgia</option>
+                    </select>
+                    <div id="font-color-div">
+                      <label for="font-color-picker" id="font-color-label"
+                        >Font-color</label
+                      >
+                      <input type="color" name="color" id="font-color-picker" />
+                    </div>
+                  </div>
+                  <div id="bg-style-div">
+                    <div id="bg-color-div">
+                      <label for="bg-color" id="bg-color-label"
+                        >Background</label
+                      >
+                      <input type="color" name="bg-color" id="bg-color" />
+                    </div>
+                    <div id="remove-bg-div">
+                      <input type="checkbox" name="remove-bg" id="remove-bg" />
+                      <label id="remove-bg-label" for="remove-bg"
+                        >Transparent</label
+                      >
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+              <div id="input-fields">
+                <input
+                  id="top-text-input"
+                  class="meme-text"
+                  type="text"
+                  placeholder="Enter top text..."
+                />
+                <input
+                  id="bottom-text-input"
+                  class="meme-text"
+                  type="text"
+                  placeholder="Enter bottom text..."
+                />
+              </div>
+              <div id="buttons">
+                <button id="generate-meme">Generate meme</button>
+                <p id="notify">Make your meme and download it here...</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <fieldset id="your-memes">
+      <legend id="around-gen-memes">Your memes</legend>
+      <div id="generated-memes"></div>
+    </fieldset>
+
+    <footer>
+      <p id="copyright">&copy; 2023 MemeCat | By Samie Smilz</p>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
