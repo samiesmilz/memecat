@@ -96,7 +96,7 @@ header {
   background-color: #d8bfd889;
   width: 575px;
   height: auto; /* Allow height to adjust based on image size */
-  /* border-radius: 15px; */
+  border-radius: 5px;
   border-style: dotted;
   border-color: rgb(255, 255, 255);
   display: grid;
