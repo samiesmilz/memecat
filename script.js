@@ -33,16 +33,20 @@ loadImageButton.addEventListener("click", function () {
   // Get image URL
   const imageUrl = imageUrlInput.value;
 
-  // Check if there is a URL in the url input feild
-  if (!imageUrl) {
+  try {
+    new URL(imageUrl);
+  } catch (error) {
     // Notify user if url is invalid
+    imageUrlInput.value = "";
     imageUrlInput.setAttribute("placeholder", "Please enter a valid url...");
+    imageUrlInput.style.borderColor = "red";
     setTimeout(function () {
       // Reset the notifications
       imageUrlInput.setAttribute("placeholder", "Enter Image URL here...");
+      imageUrlInput.style.borderColor = "grey";
     }, 3000);
 
-    return;
+    return; // URL is not valid
   }
   setDefaults();
   img.src = imageUrl;
@@ -90,12 +94,16 @@ function setDefaults() {
 function generateMeme() {
   // Form validation
   if (topTextInput.value === "" || bottomTextInput.value === "") {
+    topTextInput.style.borderColor = "red";
+    bottomTextInput.style.borderColor = "red";
     notifyElement.innerHTML = "Please enter top and bottom text...";
-    notifyElement.style.color = "red";
+    notifyElement.style.color = "yellow";
     setTimeout(() => {
       notifyElement.innerHTML = "Make your next meme...";
       notifyElement.style.color = "black";
-    }, 4000);
+      topTextInput.style.borderColor = "#583d58";
+      bottomTextInput.style.borderColor = "#583d58";
+    }, 2000);
     return;
   }
   // Create a div for the meme
